@@ -190,7 +190,7 @@ RUN chmod +x /usr/local/bin/start_nagios
 #add python with mongo
 
 RUN cd /tmp && git clone git://github.com/mzupan/nagios-plugin-mongodb.git nagios-plugin-mongodb
-RUN cd nagios-plugin-mongodb            && \
+RUN cd /tmp/nagios-plugin-mongodb            && \
     pip install requirements            && \
     cp check_mongodb.py ${NAGIOS_HOME}/libexec/check_mongodb.py
 # enable all runit services
