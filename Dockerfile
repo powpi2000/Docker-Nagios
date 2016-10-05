@@ -189,6 +189,7 @@ RUN chmod +x /usr/local/bin/start_nagios
 RUN apt-get install python python-pip
 RUN cd /tmp
 RUN git clone git://github.com/mzupan/nagios-plugin-mongodb.git nagios-plugin-mongodb
+RUN cd nagios-plugin-mongodb
 RUN pip install requirements
 RUN cp check_mongodb.py ${NAGIOS_HOME}/libexec/
 
