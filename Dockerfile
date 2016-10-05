@@ -60,7 +60,9 @@ RUN	sed -i 's/universe/universe multiverse/' /etc/apt/sources.list	;\
 		libnet-tftp-perl					\
 		libredis-perl						\
 		libswitch-perl						\
-		libwww-perl							\
+		libwww-perl						\
+		python							\
+		python-pip						\
 		libjson-perl					&&	\
 		apt-get clean
 
@@ -186,7 +188,7 @@ ADD postfix.init /etc/sv/postfix/run
 ADD start.sh /usr/local/bin/start_nagios
 RUN chmod +x /usr/local/bin/start_nagios
 #add python with mongo
-RUN apt-get install python python-pip
+
 RUN cd /tmp
 RUN git clone git://github.com/mzupan/nagios-plugin-mongodb.git nagios-plugin-mongodb
 RUN cd nagios-plugin-mongodb
