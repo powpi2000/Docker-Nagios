@@ -185,7 +185,8 @@ ADD apache.init /etc/sv/apache/run
 ADD postfix.init /etc/sv/postfix/run
 ADD start.sh /usr/local/bin/start_nagios
 RUN chmod +x /usr/local/bin/start_nagios
-
+RUN apt-get install python python-pip
+RUN pip install pymongo
 # enable all runit services
 RUN ln -s /etc/sv/* /etc/service
 
